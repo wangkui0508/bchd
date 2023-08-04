@@ -438,6 +438,18 @@ type Vout struct {
 	Value        float64            `json:"value"`
 	N            uint32             `json:"n"`
 	ScriptPubKey ScriptPubKeyResult `json:"scriptPubKey"`
+	TokenData    TokenDataResult    `json:"tokenData"`
+}
+
+type TokenDataResult struct {
+	Category string    `json:"category"`
+	Amount   string    `json:"amount"`
+	Nft      NftResult `json:"nft"`
+}
+
+type NftResult struct {
+	Capability string `json:"capability"`
+	Commitment string `json:"commitment"`
 }
 
 // GetMiningInfoResult models the data from the getmininginfo command.
